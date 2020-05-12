@@ -15,6 +15,17 @@ message HelloResponse {
     string greeting = 1;
 }
 
+message VideoRequest {
+    string videoName = 1;
+}
+
+message VideoResponse {
+    bytes videoBytes = 1;
+}
+
+
 service HelloService {
     rpc hello(HelloRequest) returns (HelloResponse);
+    
+    rpc video(VideoRequest) returns (stream VideoResponse);
 }
